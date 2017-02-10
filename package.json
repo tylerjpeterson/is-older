@@ -1,0 +1,50 @@
+{
+	"name": "is-older",
+	"version": "1.0.0",
+	"description": "Compare the age of two elements based on their position in the DOM",
+	"author": "Tyler Peterson <tylerjpeterson@gmail.com>",
+	"main": "./",
+	"scripts": {
+		"build": "mkdir -p tmp/ && rm -rf coverage && browserify -r -t [ browserify-istanbul ] ./index.js --standalone isOlder > tmp/is-older.debug.js",
+    "coverage": "npm run build && node test/test.cli.js && istanbul report --root coverage lcov && open coverage/lcov-report/index.html",
+    "docs": "jsdoc index.js -p -d docs/",
+    "test": "open test/spec/index.html",
+    "lint": "xo ./index.js || true"
+	},
+	"dependencies": {
+	},
+	"devDependencies": {
+		"browserify": "^12.0.1",
+    "browserify-istanbul": "latest",
+    "chai": "latest",
+    "istanbul": "latest",
+    "lodash": "^4.17.4",
+    "mocha": "latest",
+    "mocha-phantomjs": "latest",
+    "phantomjs": "2.1.1"
+	},
+	"bugs": {
+		"url": "https://github.com/tylerjpeterson/is-older/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/tylerjpeterson/is-older"
+	},
+	"homepage": "https://github.com/tylerjpeterson/is-older",
+	"contributors": [
+		""
+	],
+  "xo": {
+    "globals": [
+      "document",
+      "window",
+      "require",
+      "module"
+    ]
+  },
+	"keywords": [],
+	"engines": {
+		"node": ">=0.10.3"
+	},
+	"license": "MIT"
+}
